@@ -216,6 +216,7 @@ function modSwitcher() {
 }
 
 function setupSwipeControls() {
+  const field = document.querySelector('.game-field');
   let startX = 0;
   let startY = 0;
 
@@ -228,6 +229,13 @@ function setupSwipeControls() {
 
     startX = touch.clientX;
     startY = touch.clientY;
+  });
+
+  field.addEventListener('touchmove', (e) => {
+    if (game.getStatus() !== 'playing') {
+      return;
+    }
+    e.preventDefault();
   });
 
   document.addEventListener('touchend', (e) => {

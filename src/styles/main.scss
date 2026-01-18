@@ -20,6 +20,7 @@ body {
   text-align: center;
   vertical-align: center;
   user-select: none;
+  transition: transform 120ms ease;
 
   &--2 {
     background: #eee4da;
@@ -190,20 +191,17 @@ h1 {
   height: 150px;
 }
 
-.field-cell {
-  transition: transform 120ms ease;
-}
-
 .field-cell--pop {
   transform: scale(1.1);
 }
 
 .theme-switcher {
-  position: fixed;
+  position: absolute;
   top: 30px;
   right: 30px;
   background-color: #f3e096;
   font-size: 30px;
+  margin-block: 5px;
 
   border: none;
   border-radius: 5px;
